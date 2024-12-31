@@ -1,4 +1,7 @@
-import Image from "next/image";
+"use client";
+
+import { urlEndpoint } from "@/common";
+import { IKImage } from "imagekitio-next";
 
 interface WorksCardProps {
   href: string;
@@ -22,9 +25,10 @@ const WorksCard: React.FC<WorksCardProps> = ({
 }) => {
   return (
     <article className={`block rounded-lg aspect-[4/3] ${className}`}>
-      <Image
+      <IKImage
+        urlEndpoint={urlEndpoint}
+        path={imageSrc}
         alt={altText}
-        src={imageSrc}
         width={1024}
         height={1024}
         loading="lazy"

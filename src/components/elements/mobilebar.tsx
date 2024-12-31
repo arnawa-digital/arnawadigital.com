@@ -2,10 +2,10 @@
 
 import { ReactNode, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { navItems } from "@/common";
+import { navItems, urlEndpoint } from "@/common";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { IKImage } from "imagekitio-next";
 
 const NavbarBtn = ({
   placeholder,
@@ -66,13 +66,16 @@ const MobileBar = () => {
         )}
       >
         <div className="flex items-center justify-between px-5 h-20">
-          <Image
-            src={"/logo.png"}
-            alt="Logo Arnawa Digital"
+          <IKImage
+            urlEndpoint={urlEndpoint}
+            path="/logo.png"
+            alt="Arnawa Digital Logo"
             width={1024}
             height={1024}
             loading="lazy"
             className="aspect-square w-12"
+            placeholder="blur"
+            blurDataURL="/placeholder.png"
           />
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full text-gray-800"
@@ -99,13 +102,16 @@ const MobileBar = () => {
       >
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between p-5">
-            <Image
-              src={"/logo.png"}
-              alt="Logo Arnawa Digital"
+            <IKImage
+              urlEndpoint={urlEndpoint}
+              path="/logo.png"
+              alt="Arnawa Digital Logo"
               width={1024}
               height={1024}
               loading="lazy"
               className="aspect-square w-12"
+              placeholder="blur"
+              blurDataURL="/placeholder.png"
             />
             <button
               className="text-gray-600 hover:text-gray-800 focus:outline-none dark:text-gray-400 dark:hover:text-gray-200"

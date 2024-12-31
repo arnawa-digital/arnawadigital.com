@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { IKImage } from "imagekitio-next";
+import { urlEndpoint } from "@/common";
 
 const NavbarBtn = ({
   placeholder,
@@ -89,7 +90,17 @@ const Sidebar = () => {
 
   return (
     <div className="fixed right-0 h-full w-24 flex flex-col items-center justify-between px-4 py-10">
-      <Image src={"/logo.png"} alt="Logo Arnawa Digital" width={1024} height={1024} loading="lazy" className="aspect-square"/>
+      <IKImage
+        urlEndpoint={urlEndpoint}
+        path="/logo.png"
+        alt="Arnawa Digital Logo"
+        width={1024}
+        height={1024}
+        loading="lazy"
+        className="aspect-square"
+        placeholder="blur"
+        blurDataURL="/placeholder.png"
+      />
       <nav className="flex flex-col gap-6">
         {navItems.map((item, index) => (
           <NavbarBtn

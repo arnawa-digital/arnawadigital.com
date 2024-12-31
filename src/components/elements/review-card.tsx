@@ -1,5 +1,8 @@
+"use client";
+
+import { urlEndpoint } from "@/common";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { IKImage } from "imagekitio-next";
 
 interface ReviewCardProps {
   title: string;
@@ -16,13 +19,16 @@ const ReviewCard = ({ title, image, ratio = "1/1" }: ReviewCardProps) => {
       )}
       title={title}
     >
-      <Image
-        src={image}
+      <IKImage
+        urlEndpoint={urlEndpoint}
+        path={image}
         alt={title}
         width={1024}
         height={1024}
         loading="lazy"
         className="h-full w-full object-cover object-center"
+        placeholder="blur"
+        blurDataURL="/placeholder.png"
       />
     </figure>
   );
