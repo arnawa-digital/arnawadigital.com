@@ -19,7 +19,7 @@ const WorksPage = () => {
             </h3>
           </div>
         </FadeIn.Item>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-24 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-5 md:px-24 gap-8 mt-12">
           {works_content.map((item, index) => {
             return (
               <FadeIn.Item key={index}>
