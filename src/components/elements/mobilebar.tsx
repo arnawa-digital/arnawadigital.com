@@ -33,17 +33,16 @@ const NavbarBtn = ({
       href={href}
       onClick={closeDrawer}
       className={cn(
-        `flex flex-col items-center justify-center gap-0.5 p-2 w-16 h-16 rounded transition-colors duration-300`,
-        isActive ? "bg-gray-800" : "bg-white"
+        `flex flex-col items-center justify-center gap-0.5 p-2 rounded transition-colors duration-300`,
       )}
     >
-      <i className={cn("w-6 h-6", isActive ? "fill-white" : "fill-gray-800")}>
+      <i className={cn("w-6 h-6", isActive ? "fill-sky-700" : "fill-gray-800")}>
         {icon}
       </i>
       <p
         className={cn(
           "font-medium text-sm capitalize",
-          isActive ? "text-white" : "text-gray-800"
+          isActive ? "text-sky-700" : "text-gray-800"
         )}
       >
         {placeholder}
