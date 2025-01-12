@@ -66,7 +66,7 @@ const Sidebar = () => {
           />
         ))}
       </nav>
-      <div></div>
+      <div className="aspect-square w-16"></div>
     </div>
   );
 };
