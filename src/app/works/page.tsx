@@ -3,6 +3,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Works | Arnawa Digital`,
+  description: `Design & Development Agency`,
+  openGraph: {
+    title: `Works | Arnawa Digital`,
+    description: `Design & Development Agency`,
+    authors: `Arnawa Digital`,
+  },
 };
 
 const Works = () => {
