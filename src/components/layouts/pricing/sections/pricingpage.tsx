@@ -6,21 +6,20 @@ import PricingCard from "@/components/elements/pricing-card";
 
 const PricingPage = () => {
   return (
-    <PageContainer className="pt-6 pb-24 min-h-screen">
+    <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container className="">
         <FadeIn.Item>
           <Maintenance />
         </FadeIn.Item>
         <FadeIn.Item>
-          <div className="flex flex-col text-center items-center justify-between mb-4">
+          <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Our Pricing Plans</h1>
-            <h3 className="text-gray-800 text-lg mt-1 max-w-80">
-              All plans include top design and developer talents, and project
-              manager.
+            <h3 className="mt-1 max-w-80 text-lg text-gray-800">
+              All plans include top design and developer talents, and project manager.
             </h3>
           </div>
         </FadeIn.Item>
-        <div className="flex flex-col md:grid md:grid-cols-2 px-5 md:px-24 gap-8 mt-12">
+        <div className="mt-12 flex flex-col gap-8 px-5 md:grid md:grid-cols-2 md:px-24">
           {pricing_content.slice(0, 2).map((item, index) => {
             return (
               <FadeIn.Item key={index}>

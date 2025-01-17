@@ -24,7 +24,7 @@ const CollectionsPage = () => {
 
   const currentItems = collections_content.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const scrollToTop = () => {
@@ -42,21 +42,21 @@ const CollectionsPage = () => {
   };
 
   return (
-    <PageContainer className="pt-6 pb-24 min-h-screen">
+    <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container>
         <FadeIn.Item>
           <Maintenance />
         </FadeIn.Item>
         <FadeIn.Item>
-          <div className="flex flex-col text-center items-center justify-between mb-4">
+          <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Our Magic Collections</h1>
-            <h3 className="text-gray-800 text-base md:text-lg mt-1 max-w-80 italic">
-              Discover the magical collection of ready-to-launch templates,
-              perfect for bringing your vision to life in no time!
+            <h3 className="mt-1 max-w-80 text-base italic text-gray-800 md:text-lg">
+              Discover the magical collection of ready-to-launch templates, perfect for bringing
+              your vision to life in no time!
             </h3>
           </div>
         </FadeIn.Item>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-5 md:px-24 gap-8 mt-12 mb-6">
+        <div className="mb-6 mt-12 grid grid-cols-1 gap-8 px-5 md:grid-cols-2 md:px-24">
           {currentItems.map((item, index) => (
             <FadeIn.Item key={index}>
               <TemplateCard
@@ -80,9 +80,7 @@ const CollectionsPage = () => {
                   tabIndex={currentPage === 1 ? -1 : undefined}
                   className={cn(
                     "cursor-pointer",
-                    currentPage === 1
-                      ? "pointer-events-none opacity-50 cursor-pointer"
-                      : undefined
+                    currentPage === 1 ? "pointer-events-none cursor-pointer opacity-50" : undefined,
                   )}
                   onClick={() => handlePageChange(currentPage - 1)}
                 />
@@ -104,9 +102,7 @@ const CollectionsPage = () => {
                   tabIndex={currentPage === totalPages ? -1 : undefined}
                   className={cn(
                     "cursor-pointer",
-                    currentPage === totalPages
-                      ? "pointer-events-none opacity-50"
-                      : undefined
+                    currentPage === totalPages ? "pointer-events-none opacity-50" : undefined,
                   )}
                   onClick={() => handlePageChange(currentPage + 1)}
                 />

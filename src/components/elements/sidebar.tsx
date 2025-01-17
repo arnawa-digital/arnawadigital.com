@@ -23,17 +23,15 @@ const NavbarBtn = ({
     <Link
       href={href}
       className={cn(
-        `flex flex-col items-center justify-center gap-0.5 p-2 w-16 h-16 rounded transition-colors duration-300`,
-        isActive ? "bg-gray-800" : "bg-white"
+        `flex h-14 w-14 flex-col items-center justify-center gap-0.5 rounded transition-colors duration-300`,
+        isActive ? "" : "bg-white",
       )}
     >
-      <i className={cn("w-6 h-6", isActive ? "fill-white" : "fill-gray-800")}>
-        {icon}
-      </i>
+      <i className={cn("", isActive ? "fill-gray-800" : "fill-gray-500")}>{icon}</i>
       <p
         className={cn(
-          "font-medium text-sm capitalize",
-          isActive ? "text-white" : "text-gray-800"
+          "text-xs font-medium capitalize",
+          isActive ? "text-gray-800" : "text-gray-500",
         )}
       >
         {placeholder}
@@ -44,26 +42,22 @@ const NavbarBtn = ({
 
 const Sidebar = () => {
   return (
-    <div className="fixed right-0 h-full w-24 flex flex-col items-center justify-between px-4 py-10">
-      <IKImage
-        urlEndpoint={urlEndpoint}
-        path="/logo.png"
-        alt="Arnawa Digital Logo"
-        width={1024}
-        height={1024}
-        loading="lazy"
-        className="aspect-square"
-        placeholder="blur"
-        blurDataURL="/placeholder.png"
-      />
-      <nav className="flex flex-col gap-6">
-        {navItems.map((item, index) => (
-          <NavbarBtn
-            key={index}
-            placeholder={item.placeholder}
-            href={item.href}
-            icon={item.icon}
-          />
+    <div className="fixed right-0 flex h-full w-24 flex-col items-center justify-between px-4 py-10">
+      <Link href={"/"} className={cn("")}>
+        <IKImage
+          urlEndpoint={urlEndpoint}
+          path="/logo.png"
+          alt="Arnawa Digital Logo"
+          width={1024}
+          height={1024}
+          loading="lazy"
+          className="aspect-square"
+        />
+      </Link>
+
+      <nav className="flex flex-col gap-4">
+        {navItems.slice(0).map((item, index) => (
+          <NavbarBtn key={index} placeholder={item.placeholder} href={item.href} icon={item.icon} />
         ))}
       </nav>
       <div className="aspect-square w-16"></div>

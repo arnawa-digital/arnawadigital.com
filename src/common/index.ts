@@ -6,11 +6,4 @@ import navItems from "./contents/components/navbar";
 
 const urlEndpoint = "https://ik.imagekit.io/a5rn4awa3digi2tal1/arnawadigital/";
 
-export {
-  home_content,
-  works_content,
-  collections_content,
-  pricing_content,
-  navItems,
-  urlEndpoint,
-};
+export { home_content, works_content, collections_content, pricing_content, navItems, urlEndpoint };

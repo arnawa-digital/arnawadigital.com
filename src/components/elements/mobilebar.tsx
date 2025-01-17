@@ -6,13 +6,7 @@ import { navItems, urlEndpoint } from "@/common";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IKImage } from "imagekitio-next";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-} from "../ui/drawer";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer";
 
 const NavbarBtn = ({
   placeholder,
@@ -33,16 +27,14 @@ const NavbarBtn = ({
       href={href}
       onClick={closeDrawer}
       className={cn(
-        `flex flex-col items-center justify-center gap-0.5 p-2 rounded transition-colors duration-300`,
+        `flex w-14 flex-col items-center justify-center gap-0.5 rounded transition-colors duration-300`,
       )}
     >
-      <i className={cn("w-6 h-6", isActive ? "fill-sky-700" : "fill-gray-800")}>
-        {icon}
-      </i>
+      <i className={cn("", isActive ? "fill-gray-800" : "fill-gray-500")}>{icon}</i>
       <p
         className={cn(
-          "font-medium text-sm capitalize",
-          isActive ? "text-sky-700" : "text-gray-800"
+          "text-xs font-medium capitalize",
+          isActive ? "text-gray-800" : "text-gray-500",
         )}
       >
         {placeholder}
@@ -68,10 +60,10 @@ const MobileBar = () => {
       <nav
         className={cn(
           "fixed bottom-0 z-50 w-full transform bg-gradient-to-t from-gray-300 to-transparent shadow-lg",
-          isOpen ? "translate-y-full" : "translate-y-0"
+          isOpen ? "translate-y-full" : "translate-y-0",
         )}
       >
-        <div className="flex items-center justify-between px-5 h-20">
+        <div className="flex h-20 items-center justify-between px-5">
           <IKImage
             urlEndpoint={urlEndpoint}
             path="/logo.png"
@@ -80,8 +72,6 @@ const MobileBar = () => {
             height={1024}
             loading="lazy"
             className="aspect-square w-12"
-            placeholder="blur"
-            blurDataURL="/placeholder.png"
           />
           <button onClick={toggleDrawer}>
             <svg
@@ -102,8 +92,8 @@ const MobileBar = () => {
           <DrawerTitle></DrawerTitle>
           <DrawerDescription></DrawerDescription>
         </DrawerHeader>
-        <div className="flex-1 overflow-y-auto px-4 pb-8">
-          <ul className="w-full flex justify-center gap-6">
+        <div className="flex flex-1 items-center justify-center overflow-y-auto px-4 pb-8">
+          <ul className="flex w-full max-w-80 flex-wrap justify-center gap-6 px-5">
             {navItems.map((item, index) => (
               <NavbarBtn
                 key={index}

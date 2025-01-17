@@ -9,31 +9,30 @@ import Link from "next/link";
 
 const Homepage = () => {
   return (
-    <PageContainer className="pt-6 pb-24 min-h-screen">
+    <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container className="">
         <FadeIn.Item>
           <Maintenance />
         </FadeIn.Item>
         <FadeIn.Item>
-          <div className="flex flex-col text-center items-center justify-between mb-4">
+          <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Arnawa Digital</h1>
-            <h3 className="text-gray-800 text-lg mt-1">
+            <h3 className="mt-1 text-lg text-gray-800">
               Digital Agency | Design & Development Service
             </h3>
           </div>
         </FadeIn.Item>
 
         <FadeIn.Item>
-          <div className="w-full flex justify-center">
-            <p className="text-center text-gray-700 max-w-xl">
-              Digital agency that builds products and connections where visuals
-              and needs meet outstanding solutions, through well-planned
-              strategies and thinking.
+          <div className="flex w-full justify-center">
+            <p className="max-w-xl text-center text-gray-700">
+              Digital agency that builds products and connections where visuals and needs meet
+              outstanding solutions, through well-planned strategies and thinking.
             </p>
           </div>
         </FadeIn.Item>
         <FadeIn.Item>
-          <div className="relative flex h-full py-6 w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-6">
             <Marquee className="[--duration:24s]">
               {works_content.map((item) => (
                 <ReviewCard
@@ -49,35 +48,34 @@ const Homepage = () => {
           </div>
         </FadeIn.Item>
         <FadeIn.Item>
-          <div className="grid grid-cols-2 md:px-48 gap-6">
+          <div className="grid grid-cols-2 gap-6 md:px-48">
             <p className="text-sm text-gray-700">
-              As a trusted ally to local and global organizations of all kinds,
-              we support leaders like you to build an organization or business
-              that people love online and in beyond—through technology
+              As a trusted ally to local and global organizations of all kinds, we support leaders
+              like you to build an organization or business that people love online and in
+              beyond—through technology
             </p>
             <p className="text-sm text-gray-700">
-              Our promise? To make your organization or business smartly win
-              over your clients, markets, and employees, while undoubtedly
-              charming even your unconditionally loving mother&apos;s eyes
+              Our promise? To make your organization or business smartly win over your clients,
+              markets, and employees, while undoubtedly charming even your unconditionally loving
+              mother&apos;s eyes
             </p>
           </div>
         </FadeIn.Item>
 
         <FadeIn.Item>
-          <div className="md:px-48 mt-8">
-            <h1 className="text-xl font-semibold md:-translate-x-4 max-w-60 text-gray-800">
+          <div className="mt-8 md:px-48">
+            <h1 className="max-w-60 text-xl font-semibold text-gray-800 md:-translate-x-4">
               What’s it like working with us?
             </h1>
           </div>
         </FadeIn.Item>
 
         <FadeIn.Item>
-          <div className="grid grid-cols-2 md:px-48 gap-6 mt-4">
+          <div className="mt-4 grid grid-cols-2 gap-6 md:px-48">
             <p className="text-sm text-gray-700">
-              Our clients will tell you, that our attention to detail,
-              trust—filled collaboration, and deliver high-performing projects
-              while making the process, make it more enjoyable, rewarding, and
-              full of unexpected opportunities
+              Our clients will tell you, that our attention to detail, trust—filled collaboration,
+              and deliver high-performing projects while making the process, make it more enjoyable,
+              rewarding, and full of unexpected opportunities
             </p>
             <div className="text-sm text-gray-700">
               <p>Our services? Include</p>
@@ -92,8 +90,8 @@ const Homepage = () => {
         </FadeIn.Item>
 
         <FadeIn.Item>
-          <div className="md:px-48 mt-6 flex gap-3 items-center">
-            <Button asChild className="rounded-full px-6 flex items-center">
+          <div className="mt-6 flex items-center gap-3 md:px-48">
+            <Button asChild className="flex items-center rounded-full px-6">
               <Link href={"https://www.instagram.com/arnawadigital"} target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

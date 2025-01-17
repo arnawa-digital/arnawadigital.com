@@ -3,14 +3,13 @@ const couponCode = "RnJlZSBUcmlhbCBDb3Vwb24gQXJuYXdhIERpZ2l0YWw=";
 const message = `Coupon: ${couponCode} Successfully Claimed\nI want to order Standard Package Website ✨`;
 
 const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-  message
+  message,
 )}`;
 
 const pricing_content = [
   {
     title: "Standard",
-    description:
-      "Perfect for small businesses with occasional awareness needs.",
+    description: "Perfect for small businesses with occasional awareness needs.",
     price: "429,000 IDR",
     price_description: "Billed per project",
     free_trial_href: whatsappLink,

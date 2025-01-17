@@ -5,11 +5,7 @@ export const metadata: Metadata = {
 };
 
 const Loading = () => {
-  return (
-    <main className="w-full h-screen flex justify-center items-center gap-3">
-      Loading...
-    </main>
-  );
+  return <main className="flex h-screen w-full items-center justify-center gap-3">Loading...</main>;
 };
 
 export default Loading;

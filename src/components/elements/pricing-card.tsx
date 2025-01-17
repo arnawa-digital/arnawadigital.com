@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const FeatureList = ({ feature_name }: { feature_name: string }) => {
   return (
     <li className="flex items-center gap-2 text-gray-700">
-      <Check size={16} className="text-green-500 flex-shrink-0" />
+      <Check size={16} className="flex-shrink-0 text-green-500" />
       <span>{feature_name}</span>
     </li>
   );
@@ -37,14 +37,14 @@ const PricingCard = ({
   return (
     <article
       className={cn(
-        "w-full p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col gap-6 bg-white",
-        className
+        "flex w-full flex-col gap-6 rounded-lg border bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md",
+        className,
       )}
     >
       <div className="flex flex-col gap-4">
         <header>
           <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
-          <p className="text-gray-600 text-sm">{description}</p>
+          <p className="text-sm text-gray-600">{description}</p>
         </header>
 
         <div className="flex flex-col gap-1">
@@ -66,15 +66,13 @@ const PricingCard = ({
             className="text-center text-gray-600 underline hover:text-gray-800"
             aria-label="Get a trial project for 249,000 IDR"
           >
-            Get One Trial Project for 249,000 IDR
+            Get One Trial Project for 299,000 IDR
           </Link>
         </div>
       </div>
 
       <div>
-        <h3 className="text-lg font-medium text-gray-800 underline">
-          {service_title}:
-        </h3>
+        <h3 className="text-lg font-medium text-gray-800 underline">{service_title}:</h3>
         <ul className="mt-4 space-y-2">
           {feature_list.map((item, index) => (
             <FeatureList key={index} feature_name={item} />

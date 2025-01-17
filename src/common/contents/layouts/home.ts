@@ -2,15 +2,10 @@ const home_content = {
   headline: {
     title: "Transforming your visions and needs into stunning products",
     desc: "We transform your vision and needs into digital experiences that fit with outstanding design and development services, creating stunning, user-friendly products that connect with your goals.",
-    component: [
-      "WEBSITE_BANNER",
-      "ACTIFISH_BANNER",
-      "BINGUNG_DI_BANDUNG_BANNER",
-    ],
+    component: ["WEBSITE_BANNER", "ACTIFISH_BANNER", "BINGUNG_DI_BANDUNG_BANNER"],
   },
   benefit: {
-    title:
-      "No more worries about service nightmares or product development headaches",
+    title: "No more worries about service nightmares or product development headaches",
     component: [
       {
         title: "Customized Only For you",

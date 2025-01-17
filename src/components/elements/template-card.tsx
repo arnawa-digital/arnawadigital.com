@@ -35,9 +35,9 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
       />
       <div className="mt-2">
         <dl>
-          <div className="w-full flex gap-3">
+          <div className="flex w-full gap-3">
             <Button
-              className="w-full flex items-center"
+              className="flex w-full items-center"
               size={"sm"}
               onClick={() =>
                 (location.href = `https://api.whatsapp.com/send?phone=62895710149040&text=Halo%20Arnawa%20Digital%20,%20mau%20tanya%20tentang%20template%20${title}`)
@@ -55,7 +55,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
               <p>Consultation Now</p>
             </Button>
             <Button
-              className="w-full flex items-center cursor-not-allowed"
+              className="flex w-full cursor-not-allowed items-center"
               size={"sm"}
               variant={"secondary"}
               disabled
@@ -81,7 +81,7 @@ const TemplateCard: React.FC<TemplateCardProps> = ({
 
             <div>
               <dt className="sr-only">Description</dt>
-              <dd className="text-sm line-clamp-2 text-gray-700">{desc}</dd>
+              <dd className="line-clamp-2 text-sm text-gray-700">{desc}</dd>
             </div>
 
             <div className="mt-2 flex items-center gap-1">
