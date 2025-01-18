@@ -42,7 +42,7 @@ const NavbarBtn = ({
 
 const Sidebar = () => {
   return (
-    <div className="fixed right-0 flex h-full w-24 flex-col items-center justify-between px-4 py-10">
+    <div className="fixed z-50 right-0 flex h-full w-24 flex-col items-center justify-between px-4 py-10">
       <Link href={"/"} className={cn("")}>
         <IKImage
           urlEndpoint={urlEndpoint}

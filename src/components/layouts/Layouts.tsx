@@ -21,8 +21,10 @@ const Layouts = ({ children }: { children: ReactNode }) => {
   return (
     <>
       {isMobile ? <Mobilebar /> : <Sidebar />}
-      <div className="flex flex-col items-center px-5 py-4 md:px-64">
-        <PromotionBanner freeTrials={27} />
+      <div className="flex flex-col items-center px-5 py-4 md:px-64 relative">
+        <div className="flex justify-center items-center pt-6">
+          <PromotionBanner freeTrials={46} />
+        </div>
         {children}
       </div>
     </>
