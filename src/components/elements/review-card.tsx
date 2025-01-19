@@ -15,7 +15,7 @@ const ReviewCard = ({ title, image, ratio = "1/1" }: ReviewCardProps) => {
     <figure
       className={cn(
         "relative w-64 cursor-pointer overflow-hidden rounded-lg",
-        `aspect-${ratio.replace(":", "/")}`
+        `aspect-${ratio.replace(":", "/")}`,
       )}
       title={title}
     >

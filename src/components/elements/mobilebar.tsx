@@ -6,6 +6,7 @@ import { navItems, urlEndpoint } from "@/common";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IKImage } from "imagekitio-next";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle } from "../ui/drawer";
 
 const NavbarBtn = ({
   placeholder,
@@ -26,17 +27,14 @@ const NavbarBtn = ({
       href={href}
       onClick={closeDrawer}
       className={cn(
-        `flex flex-col items-center justify-center gap-0.5 p-2 w-16 h-16 rounded transition-colors duration-300`,
-        isActive ? "bg-gray-800" : "bg-white"
+        `flex w-14 flex-col items-center justify-center gap-0.5 rounded transition-colors duration-300`,
       )}
     >
-      <i className={cn("w-6 h-6", isActive ? "fill-white" : "fill-gray-800")}>
-        {icon}
-      </i>
+      <i className={cn("", isActive ? "fill-gray-800" : "fill-gray-500")}>{icon}</i>
       <p
         className={cn(
-          "font-medium text-sm capitalize",
-          isActive ? "text-white" : "text-gray-800"
+          "text-xs font-medium capitalize",
+          isActive ? "text-gray-800" : "text-gray-500",
         )}
       >
         {placeholder}
@@ -58,14 +56,14 @@ const MobileBar = () => {
   }, [pathname]);
 
   return (
-    <>
+    <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <nav
         className={cn(
           "fixed bottom-0 z-50 w-full transform bg-gradient-to-t from-gray-300 to-transparent shadow-lg",
-          isOpen ? "translate-y-full" : "translate-y-0"
+          isOpen ? "translate-y-full" : "translate-y-0",
         )}
       >
-        <div className="flex items-center justify-between px-5 h-20">
+        <div className="flex h-20 items-center justify-between px-5">
           <IKImage
             urlEndpoint={urlEndpoint}
             path="/logo.png"
@@ -74,13 +72,8 @@ const MobileBar = () => {
             height={1024}
             loading="lazy"
             className="aspect-square w-12"
-            placeholder="blur"
-            blurDataURL="/placeholder.png"
           />
-          <button
-            className="flex h-12 w-12 items-center justify-center rounded-full text-gray-800"
-            onClick={toggleDrawer}
-          >
+          <button onClick={toggleDrawer}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -94,57 +87,26 @@ const MobileBar = () => {
         </div>
       </nav>
 
-      <div
-        className={cn(
-          "fixed inset-x-0 bottom-0 z-40 w-full transform pb-6 bg-white border-t transition-transform duration-300 ease-in-out dark:bg-gray-800",
-          isOpen ? "translate-y-0" : "translate-y-full"
-        )}
-      >
-        <div className="flex h-full flex-col">
-          <div className="flex items-center justify-between p-5">
-            <IKImage
-              urlEndpoint={urlEndpoint}
-              path="/logo.png"
-              alt="Arnawa Digital Logo"
-              width={1024}
-              height={1024}
-              loading="lazy"
-              className="aspect-square w-12"
-              placeholder="blur"
-              blurDataURL="/placeholder.png"
-            />
-            <button
-              className="text-gray-600 hover:text-gray-800 focus:outline-none dark:text-gray-400 dark:hover:text-gray-200"
-              onClick={toggleDrawer}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 256 256"
-                className="fill-gray-800"
-              >
-                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-              </svg>
-            </button>
-          </div>
-
-          <div className="flex-1 overflow-y-auto p-4">
-            <ul className="w-full flex justify-center gap-6">
-              {navItems.map((item, index) => (
-                <NavbarBtn
-                  key={index}
-                  placeholder={item.placeholder}
-                  href={item.href}
-                  icon={item.icon}
-                  closeDrawer={() => setIsOpen(false)}
-                />
-              ))}
-            </ul>
-          </div>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle></DrawerTitle>
+          <DrawerDescription></DrawerDescription>
+        </DrawerHeader>
+        <div className="flex flex-1 items-center justify-center overflow-y-auto px-4 pb-8">
+          <ul className="flex w-full max-w-80 flex-wrap justify-center gap-6 px-5">
+            {navItems.map((item, index) => (
+              <NavbarBtn
+                key={index}
+                placeholder={item.placeholder}
+                href={item.href}
+                icon={item.icon}
+                closeDrawer={() => setIsOpen(false)}
+              />
+            ))}
+          </ul>
         </div>
-      </div>
-    </>
+      </DrawerContent>
+    </Drawer>
   );
 };
 
