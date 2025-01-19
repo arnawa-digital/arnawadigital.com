@@ -23,16 +23,16 @@ const PromotionBanner = ({ freeTrials }: { freeTrials: number }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const bannerClass = `fixed rounded z-10 top-4 w-max transform transition-transform duration-300 ease-in-out ${
+  const bannerClass = `fixed rounded-none md:rounded z-10 top-0 md:top-4 w-full md:w-max transform transition-transform duration-300 ease-in-out ${
     isVisible && scrollDirection !== "down" ? "-translate-y-0" : "-translate-y-16"
   }`;
 
   return (
     isVisible && (
       <article
-        className={`${bannerClass} flex items-center justify-between bg-blue-600 px-2 md:px-4 py-2 text-sm text-white shadow-md`}
+        className={`${bannerClass} flex flex-col-reverse justify-center items-center md:justify-between bg-blue-600 px-2 py-2 text-center text-sm text-white shadow-md md:flex-row md:items-center md:px-4 md:text-left`}
       >
-        <p>
+        <p className="max-w-60 md:max-w-max">
           Only <span className="font-bold">{freeTrials}</span> one trial project per brand left!{" "}
           <Link href="/contact" className="underline">
             Hire us
@@ -41,7 +41,7 @@ const PromotionBanner = ({ freeTrials }: { freeTrials: number }) => {
         </p>
         <button
           onClick={() => setIsVisible(false)}
-          className="ml-4 rounded-full text-xs font-bold text-blue-600"
+          className="fixed top-2 right-4 rounded-full text-xs font-bold text-blue-600 md:static md:top-0 md:ml-4"
           aria-label="Close Promotion Banner"
         >
           <svg
