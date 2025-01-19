@@ -1,24 +1,14 @@
 {
   "name": "v1.arnawadigital.com",
+  "homepage": "https://www.arnawadigital.com",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -H localhost",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "eslint . --fix && yarn format",
-    "format": "prettier --write .",
-    "format:check": "prettier -c .",
-    "test": "vitest",
-    "coverage": "vitest --coverage --run",
-    "prepare": "husky"
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "homepage": "https://www.arnawadigital.com",
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.1",
