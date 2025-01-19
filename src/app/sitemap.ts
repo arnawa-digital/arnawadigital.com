@@ -1,43 +1,51 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = "https://arnawadigital.com/";
+  const domain = "https://arnawadigital.com";
+  const currentDate = new Date();
+
   return [
     {
       url: domain,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 1.0,
     },
     {
       url: `${domain}/services`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${domain}/works`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${domain}/contact`,
-      lastModified: new Date(),
+      lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${domain}/pricing`,
-      lastModified: new Date(),
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${domain}/collections`,
+      lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.6,
     },
     {
-      url: `${domain}/collections`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.5,
+      url: `${domain}/blog`,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 0.7,
     },
   ];
 }
