@@ -1,5 +1,4 @@
 import { pricing_content } from "@/common";
-import Maintenance from "@/components/elements/maintenance";
 import * as FadeIn from "@/components/elements/motion";
 import PageContainer from "@/components/elements/page-container";
 import PricingCard from "@/components/elements/pricing-card";
@@ -10,10 +9,6 @@ const PricingPage = () => {
       <main>
         <FadeIn.Container>
           <FadeIn.Item>
-            <Maintenance />
-          </FadeIn.Item>
-
-          <FadeIn.Item>
             <header className="mb-4 text-center">
               <h1 className="text-2xl font-semibold">Our Pricing Plans</h1>
               <p className="mx-auto mt-1 max-w-80 text-lg text-gray-800">
@@ -22,7 +17,7 @@ const PricingPage = () => {
             </header>
           </FadeIn.Item>
 
-          <section className="mt-12 flex flex-col md:grid gap-8 px-5 md:grid-cols-2">
+          <section className="mt-12 flex flex-col gap-8 px-5 md:grid md:grid-cols-2">
             {pricing_content.slice(0, 2).map((item, index) => (
               <FadeIn.Item key={index}>
                 <PricingCard
@@ -51,9 +46,11 @@ const PricingPage = () => {
 
             <article className="col-span-2 w-full rounded-lg border p-6 shadow-sm transition-shadow duration-300 hover:shadow-md">
               <header>
-                <h2 className="text-2xl font-semibold text-gray-800 text-center">All Plans Include</h2>
+                <h2 className="text-center text-2xl font-semibold text-gray-800">
+                  All Plans Include
+                </h2>
               </header>
-              <ul className="mt-6 flex flex-col md:grid md:grid-cols-2 gap-y-4 font-medium text-gray-700">
+              <ul className="mt-6 flex flex-col gap-y-4 font-medium text-gray-700 md:grid md:grid-cols-2">
                 <li className="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

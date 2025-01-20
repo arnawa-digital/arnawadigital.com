@@ -1,7 +1,6 @@
 "use client";
 
 import { urlEndpoint } from "@/common";
-import Maintenance from "@/components/elements/maintenance";
 import * as FadeIn from "@/components/elements/motion";
 import PageContainer from "@/components/elements/page-container";
 import { IKImage } from "imagekitio-next";
@@ -11,10 +10,6 @@ const ServicesPage = () => {
     <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container>
         <FadeIn.Item>
-          <Maintenance />
-        </FadeIn.Item>
-
-        <FadeIn.Item>
           <header className="mb-4 text-center">
             <h1 className="text-2xl font-semibold">Our Services</h1>
             <p className="mx-auto mt-1 max-w-lg text-lg text-gray-800">
@@ -22,7 +17,6 @@ const ServicesPage = () => {
             </p>
           </header>
         </FadeIn.Item>
-
         <main className="mt-12 flex flex-col gap-16 px-5 md:px-24">
           <FadeIn.Item>
             <article className="flex w-full flex-col gap-4 md:flex-row md:gap-8">

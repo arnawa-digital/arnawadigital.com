@@ -1,5 +1,4 @@
 import { works_content } from "@/common";
-import Maintenance from "@/components/elements/maintenance";
 import * as FadeIn from "@/components/elements/motion";
 import PageContainer from "@/components/elements/page-container";
 import WorksCard from "@/components/elements/works-card";
@@ -8,9 +7,6 @@ const WorksPage = () => {
   return (
     <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container className="">
-        <FadeIn.Item>
-          <Maintenance />
-        </FadeIn.Item>
         <FadeIn.Item>
           <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Our Works</h1>
