@@ -2,7 +2,6 @@ import PageContainer from "@/components/elements/page-container";
 import * as FadeIn from "@/components/elements/motion";
 import Marquee from "@/components/ui/marquee";
 import { Button } from "@/components/ui/button";
-import Maintenance from "@/components/elements/maintenance";
 import ReviewCard from "@/components/elements/review-card";
 import { works_content } from "@/common";
 import Link from "next/link";
@@ -12,9 +11,6 @@ const Homepage = () => {
     <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container className="">
         <FadeIn.Item>
-          <Maintenance />
-        </FadeIn.Item>
-        <FadeIn.Item>
           <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Arnawa Digital</h1>
             <h3 className="mt-1 text-lg text-gray-800">
@@ -22,7 +18,6 @@ const Homepage = () => {
             </h3>
           </div>
         </FadeIn.Item>
-
         <FadeIn.Item>
           <div className="flex w-full justify-center">
             <p className="max-w-xl text-center text-gray-700">
@@ -61,7 +56,6 @@ const Homepage = () => {
             </p>
           </div>
         </FadeIn.Item>
-
         <FadeIn.Item>
           <div className="mt-8 md:px-48">
             <h1 className="max-w-60 text-xl font-semibold text-gray-800 md:-translate-x-4">
@@ -69,7 +63,6 @@ const Homepage = () => {
             </h1>
           </div>
         </FadeIn.Item>
-
         <FadeIn.Item>
           <div className="mt-4 grid grid-cols-2 gap-6 md:px-48">
             <p className="text-sm text-gray-700">
@@ -88,7 +81,6 @@ const Homepage = () => {
             </div>
           </div>
         </FadeIn.Item>
-
         <FadeIn.Item>
           <div className="mt-6 flex items-center gap-3 md:px-48">
             <Button asChild className="flex items-center rounded-full px-6">

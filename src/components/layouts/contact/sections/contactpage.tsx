@@ -1,15 +1,11 @@
 import PageContainer from "@/components/elements/page-container";
 import * as FadeIn from "@/components/elements/motion";
-import Maintenance from "@/components/elements/maintenance";
 import Link from "next/link";
 
 const ContactPage = () => {
   return (
     <PageContainer className="min-h-screen pb-24 pt-6">
       <FadeIn.Container className="">
-        <FadeIn.Item>
-          <Maintenance />
-        </FadeIn.Item>
         <FadeIn.Item>
           <div className="mb-4 flex flex-col items-center justify-between text-center">
             <h1 className="text-2xl font-semibold">Our Contacts</h1>
